@@ -1,0 +1,25 @@
+.MODEL SMALL
+.STACK 100
+
+.DATA
+    NUM1 DB 70
+    NUM2 DB 5
+    RES  DB ?
+.CODE
+    MOV AX,@DATA
+    MOV DS,AX
+
+    MOV AL,NUM1
+    MOV BL,NUM2
+
+    SUB AL,BL
+
+    MOV RES,AL
+    MOV DL,AL
+
+    MOV AH,2
+    INT 21H
+
+    MOV AH,4CH
+    INT 21H
+END
